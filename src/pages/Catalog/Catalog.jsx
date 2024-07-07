@@ -1,25 +1,14 @@
 import { useEffect } from "react";
-import { renderCampers } from "../../redux/campers/operations";
+import { getAllCampers } from "../../redux/campers/operations";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCampers } from "../../redux/campers/selectors";
 
 const Catalog = () => {
-  useEffect(() => {
-    const getCampers = async () => {
-      const campers = await renderCampers();
-
-      return campers;
-    };
-
-    getCampers();
-  }, []);
+  //   const campers = useSelector(selectCampers);
 
   return (
     <>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      <ul>{}</ul>
     </>
   );
 };
