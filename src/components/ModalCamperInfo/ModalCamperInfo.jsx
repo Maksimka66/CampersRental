@@ -4,12 +4,6 @@ import { NavLink, Outlet } from "react-router-dom";
 import { getAllCampers } from "../../redux/campers/operations";
 
 const ModalCamperInfo = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAllCampers());
-  }, [dispatch]);
-
   return (
     <div>
       <nav>
