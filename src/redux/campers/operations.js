@@ -9,8 +9,6 @@ export const getAllCampers = createAsyncThunk(
     try {
       const response = await axios.get("/advert");
 
-      console.log(response.data);
-
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -23,6 +21,32 @@ export const getOneCamper = createAsyncThunk(
   async (camperId, thunkAPI) => {
     try {
       const response = await axios.get(`/advert/${camperId}`);
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const addToFavorites = createAsyncThunk(
+  "campers/addToFavorites",
+  async (camperId, thunkAPI) => {
+    try {
+      const response = await axios.post("/advert", { camperId });
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const removeFromFavorites = createAsyncThunk(
+  "campers/removeFromFavorites",
+  async (camperId, thunkAPI) => {
+    try {
+      const response = await axios.delete(`/advert/${camperId}`);
 
       return response.data;
     } catch (error) {

@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { NavLink, Outlet } from "react-router-dom";
 import { getAllCampers } from "../../redux/campers/operations";
 
-const ModalCamperInfo = () => {
+const ModalCamperInfo = ({ camper }) => {
   return (
     <div>
       <nav>
