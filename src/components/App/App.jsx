@@ -13,8 +13,6 @@ import "./App.css";
 function App() {
   return (
     <>
-      <Home />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
