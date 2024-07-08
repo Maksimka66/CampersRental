@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { getAllCampers } from "../../redux/campers/operations";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCampers } from "../../redux/campers/selectors";
-import ModalCamperInfo from "../../components/ModalCamperInfo/ModalCamperInfo";
+import ModalCamperInfo from "../../components/Camper/Camper";
 
 const Catalog = () => {
   const campers = useSelector(selectCampers);

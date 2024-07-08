@@ -4,7 +4,7 @@ import Home from "../../pages/Home/Home";
 import Catalog from "../../pages/Catalog/Catalog";
 import Favorites from "../../pages/Favorites/Favorites";
 import NotFound from "../../pages/NotFound/NotFound";
-import ModalCamperInfo from "../ModalCamperInfo/ModalCamperInfo";
+import ModalCamperInfo from "../Camper/Camper";
 import Features from "../Features/Features";
 import Reviews from "../Reviews/Reviews";
 
