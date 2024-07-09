@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import { getAllCampers } from "../../redux/campers/operations";
 import { useDispatch, useSelector } from "react-redux";
+
+import { getAllCampers } from "../../redux/campers/operations";
 import { selectCampers } from "../../redux/campers/selectors";
-import ModalCamperInfo from "../../components/Camper/Camper";
+import Camper from "../../components/Camper/Camper";
 
 const Catalog = () => {
   const campers = useSelector(selectCampers);
@@ -20,7 +21,7 @@ const Catalog = () => {
       <ul>
         {campers.map((camper) => (
           <li key={camper._id}>
-            <ModalCamperInfo camper={camper} />
+            <Camper camper={camper} />
           </li>
         ))}
       </ul>

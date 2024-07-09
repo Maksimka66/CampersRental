@@ -1,10 +1,26 @@
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { NavLink, Outlet } from "react-router-dom";
-import { getAllCampers } from "../../redux/campers/operations";
+import Modal from "react-modal";
 
-const ModalCamperInfo = ({
+import { getOneCamper } from "../../redux/campers/operations";
+import { useState } from "react";
+import CamperModalInfo from "../CamperModalInfo/CamperModalInfo";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+Modal.setAppElement("#root");
+
+const Camper = ({
   camper: {
+    _id,
     gallery,
     name,
     price,
@@ -18,6 +34,19 @@ const ModalCamperInfo = ({
     details,
   },
 }) => {
+  const [modal, setModal] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const handleModalInfo = () => {
+    dispatch(getOneCamper(_id));
+    setModal(true);
+  };
+
+  const closeModal = () => {
+    setModal(false);
+  };
+
   return (
     <div>
       <img src={gallery[0]} alt="Camper photo" width="290" />
@@ -53,19 +82,22 @@ const ModalCamperInfo = ({
             <p>{`${details.beds} beds`}</p>
           )}
         </li>
-        <li>
-          <p></p>
-        </li>
+        <li>{details.airConditioner && <p>AC</p>}</li>
       </ul>
-      <button type="click">Show more</button>
-      {/* <nav>
-        <NavLink to="features">Features</NavLink>
-        <NavLink to="reviews">Reviews</NavLink>
-      </nav> */}
-
-      {/* <Outlet /> */}
+      <button type="click" onClick={handleModalInfo}>
+        Show more
+      </button>
+      <Modal
+        isOpen={modal}
+        // onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <CamperModalInfo />
+      </Modal>
     </div>
   );
 };
 
-export default ModalCamperInfo;
+export default Camper;

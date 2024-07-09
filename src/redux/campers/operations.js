@@ -21,6 +21,7 @@ export const getOneCamper = createAsyncThunk(
   async (camperId, thunkAPI) => {
     try {
       const response = await axios.get(`/advert/${camperId}`);
+      console.log(response.data);
 
       return response.data;
     } catch (error) {
