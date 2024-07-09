@@ -1,9 +1,10 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import Modal from "react-modal";
 
 import { getOneCamper } from "../../redux/campers/operations";
-import { useState } from "react";
 import CamperModalInfo from "../CamperModalInfo/CamperModalInfo";
+import { useParams } from "react-router-dom";
 
 const customStyles = {
   content: {
@@ -16,11 +17,8 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement("#root");
-
 const Camper = ({
   camper: {
-    _id,
     gallery,
     name,
     price,
@@ -34,12 +32,14 @@ const Camper = ({
     details,
   },
 }) => {
-  const [modal, setModal] = useState(false);
-
+  const { camperId } = useParams();
+  console.log(camperId);
   const dispatch = useDispatch();
 
-  const handleModalInfo = () => {
-    dispatch(getOneCamper(_id));
+  const [modal, setModal] = useState(false);
+
+  const openModal = () => {
+    dispatch(getOneCamper(camperId));
     setModal(true);
   };
 
@@ -53,7 +53,7 @@ const Camper = ({
       <div>
         <h2>{name}</h2>
         <div>
-          <p>{`€${price}.00`}</p>
+          <p>{`€${price},00`}</p>
           <button type="click">Heart</button>
         </div>
       </div>
@@ -84,15 +84,15 @@ const Camper = ({
         </li>
         <li>{details.airConditioner && <p>AC</p>}</li>
       </ul>
-      <button type="click" onClick={handleModalInfo}>
+      <button type="click" onClick={openModal}>
         Show more
       </button>
+
       <Modal
         isOpen={modal}
-        // onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="Info about camper"
       >
         <CamperModalInfo />
       </Modal>

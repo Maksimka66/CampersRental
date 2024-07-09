@@ -25,7 +25,9 @@ const persistedFavoritesReducer = persistReducer(
 );
 
 export const store = configureStore({
-  reducer: { campers: persistedFavoritesReducer },
+  reducer: {
+    campers: persistedFavoritesReducer,
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

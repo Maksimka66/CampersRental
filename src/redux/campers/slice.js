@@ -38,19 +38,8 @@ const campersSlice = createSlice({
         state.current = action.payload;
       })
       .addCase(getOneCamper.rejected, handleRejected),
-
-  reducers: {
-    addToFavorites(state, action) {
-      state.favorites.push(action.payload);
-    },
-    removeFromFavorites(state, action) {
-      state.favorites = state.favorites.filter(
-        (item) => item._id !== action.payload._id
-      );
-    },
-  },
 });
 
-export const { addToFavorites, removeFromFavorites } = campersSlice.actions;
+// export const { conditionModal } = campersSlice.actions;
 
 export default campersSlice.reducer;
