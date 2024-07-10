@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { getOneCamper } from "../../redux/campers/operations";
@@ -34,7 +33,7 @@ const Camper = ({
         <h2>{name}</h2>
         <div>
           <p>{`€${price},00`}</p>
-          <button type="click">Heart</button>
+          <button type="button">Heart</button>
         </div>
       </div>
       <div>

@@ -27,14 +27,16 @@ const ModalWindow = ({ children }) => {
   };
 
   return (
-    <Modal
-      isOpen={modalWindow}
-      onRequestClose={closeModal}
-      style={customStyles}
-      contentLabel="Info about camper"
-    >
-      {children}
-    </Modal>
+    modalWindow && (
+      <Modal
+        isOpen={modalWindow}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Info about camper"
+      >
+        {children}
+      </Modal>
+    )
   );
 };
 

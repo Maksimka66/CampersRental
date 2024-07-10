@@ -42,6 +42,7 @@ const campersSlice = createSlice({
 
   reducers: {
     switchModal(state, action) {
+      console.log(action.payload);
       state.modal = action.payload;
     },
   },
