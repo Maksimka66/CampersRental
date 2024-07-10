@@ -1,21 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import Modal from "react-modal";
 
 import { getOneCamper } from "../../redux/campers/operations";
-import CamperModalInfo from "../CamperModalInfo/CamperModalInfo";
-import { useParams } from "react-router-dom";
-
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
+import { switchModal } from "../../redux/campers/slice";
 
 const Camper = ({
   camper: {
@@ -35,15 +22,9 @@ const Camper = ({
 }) => {
   const dispatch = useDispatch();
 
-  const [modal, setModal] = useState(false);
-
   const openModal = () => {
     dispatch(getOneCamper(_id));
-    setModal(true);
-  };
-
-  const closeModal = () => {
-    setModal(false);
+    dispatch(switchModal(true));
   };
 
   return (
@@ -83,18 +64,9 @@ const Camper = ({
         </li>
         <li>{details.airConditioner && <p>AC</p>}</li>
       </ul>
-      <button type="click" onClick={openModal}>
+      <button type="button" onClick={openModal}>
         Show more
       </button>
-
-      <Modal
-        isOpen={modal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Info about camper"
-      >
-        <CamperModalInfo />
-      </Modal>
     </div>
   );
 };

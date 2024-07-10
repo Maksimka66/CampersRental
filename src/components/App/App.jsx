@@ -10,6 +10,7 @@ import Reviews from "../Reviews/Reviews";
 import CamperModalInfo from "../CamperModalInfo/CamperModalInfo";
 
 import "./App.css";
+import ModalWindow from "../ModalWindow/ModalWindow";
 
 Modal.setAppElement("#root");
 
@@ -19,9 +20,30 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
-        <Route path="/catalog/:camperId" element={<CamperModalInfo />}>
-          <Route path="features" element={<Features />} />
-          <Route path="reviews" element={<Reviews />} />
+        <Route
+          path="/catalog/:camperId"
+          element={
+            <ModalWindow>
+              <CamperModalInfo />
+            </ModalWindow>
+          }
+        >
+          <Route
+            path="features"
+            element={
+              <ModalWindow>
+                <Features />
+              </ModalWindow>
+            }
+          />
+          <Route
+            path="reviews"
+            element={
+              <ModalWindow>
+                <Reviews />
+              </ModalWindow>
+            }
+          />
         </Route>
         <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<NotFound />} />

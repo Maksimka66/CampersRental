@@ -18,6 +18,7 @@ const campersSlice = createSlice({
     items: [],
     favorites: [],
     current: {},
+    modal: false,
     loading: false,
     error: null,
   },
@@ -38,8 +39,14 @@ const campersSlice = createSlice({
         state.current = action.payload;
       })
       .addCase(getOneCamper.rejected, handleRejected),
+
+  reducers: {
+    switchModal(state, action) {
+      state.modal = action.payload;
+    },
+  },
 });
 
-// export const { conditionModal } = campersSlice.actions;
+export const { switchModal } = campersSlice.actions;
 
 export default campersSlice.reducer;
