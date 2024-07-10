@@ -30,16 +30,15 @@ const Camper = ({
     transmission,
     engine,
     details,
+    _id,
   },
 }) => {
-  const { camperId } = useParams();
-  console.log(camperId);
   const dispatch = useDispatch();
 
   const [modal, setModal] = useState(false);
 
   const openModal = () => {
-    dispatch(getOneCamper(camperId));
+    dispatch(getOneCamper(_id));
     setModal(true);
   };
 
