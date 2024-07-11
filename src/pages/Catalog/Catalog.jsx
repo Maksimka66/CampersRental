@@ -5,6 +5,8 @@ import { getAllCampers } from "../../redux/campers/operations";
 import { selectCampers } from "../../redux/campers/selectors";
 import Camper from "../../components/Camper/Camper";
 
+import css from "./Catalog.module.css";
+
 const Catalog = () => {
   const campers = useSelector(selectCampers);
 
@@ -18,9 +20,9 @@ const Catalog = () => {
 
   return (
     <>
-      <ul>
+      <ul className={css.catalogList}>
         {campers.map((camper) => (
-          <li key={camper._id}>
+          <li key={camper._id} className={css.catalogItem}>
             <Camper camper={camper} />
           </li>
         ))}

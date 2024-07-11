@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -33,10 +39,24 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 ul {
   list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 img {
