@@ -46,44 +46,80 @@ const Camper = ({
           </div>
         </div>
         <div>
-          <div>
-            <div>
+          <div className={css.ratingAndLocation}>
+            <div className={css.littleInfo}>
               <svg className={css.starIcon} width="16" height="16">
                 <use href="/src/images/sprite/sprite.svg#icon-Rating"></use>
               </svg>
               <p>{`${rating}(${reviews.length} Reviews)`}</p>
             </div>
-            <div>
+            <div className={css.littleInfo}>
               <svg className={css.locationIcon} width="12" height="15">
                 <use href="/src/images/sprite/sprite.svg#icon-map-pin"></use>
               </svg>
               <p>{location}</p>
             </div>
           </div>
-          <p>{description}</p>
         </div>
-        <ul>
-          <li>
+
+        <p className={css.descriptionText}>{description}</p>
+
+        <ul className={css.infoCamperList}>
+          <li className={css.infoCamperItem}>
             <svg className={css.usersIcon} width="20" height="20">
               <use href="/src/images/sprite/sprite.svg#icon-Users"></use>
             </svg>
             <p>{adults} adults</p>
           </li>
-          <li>
+          <li className={css.infoCamperItem}>
+            <svg className={css.transIcon} width="20" height="20">
+              <use href="/src/images/sprite/sprite.svg#icon-Container"></use>
+            </svg>
             <p>{transmission[0].toUpperCase() + transmission.substring(1)}</p>
           </li>
-          <li>
+          <li className={css.infoCamperItem}>
+            <svg className={css.engineIcon} width="20" height="20">
+              <use href="/src/images/sprite/sprite.svg#icon-Vector-3"></use>
+            </svg>
             <p>{engine[0].toUpperCase() + engine.substring(1)}</p>
           </li>
-          <li>{details.kitchen && <p>Kitchen</p>}</li>
-          <li>
-            {details.beds === 1 ? (
-              <p>{`${details.beds} bed`}</p>
-            ) : (
-              <p>{`${details.beds} beds`}</p>
+          <li className={css.infoCamperItem}>
+            {details.kitchen && (
+              <>
+                <svg className={css.kitchenIcon} width="20" height="20">
+                  <use href="/src/images/sprite/sprite.svg#icon-Vector-5"></use>
+                </svg>
+                <p>Kitchen</p>
+              </>
             )}
           </li>
-          <li>{details.airConditioner && <p>AC</p>}</li>
+          <li className={css.infoCamperItem}>
+            {details.beds === 1 ? (
+              <>
+                <svg className={css.bedIcon} width="20" height="20">
+                  <use href="/src/images/sprite/sprite.svg#icon-Container-1"></use>
+                </svg>
+                <p>{`${details.beds} bed`}</p>
+              </>
+            ) : (
+              <>
+                <svg className={css.bedIcon} width="20" height="20">
+                  <use href="/src/images/sprite/sprite.svg#icon-Container-1"></use>
+                </svg>
+                <p>{`${details.beds} beds`}</p>
+              </>
+            )}
+          </li>
+          <li className={css.infoCamperItem}>
+            {details.airConditioner && (
+              <>
+                <svg className={css.airConditionerIcon} width="20" height="20">
+                  <use href="/src/images/sprite/sprite.svg#icon-Vector-10"></use>
+                </svg>
+                <p>AC</p>
+              </>
+            )}
+          </li>
         </ul>
         <button
           className={css.showMoreButton}

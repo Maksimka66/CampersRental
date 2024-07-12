@@ -1,25 +1,33 @@
 .listItemContainer {
   display: flex;
   gap: 24px;
+  width: 840px;
 }
 
 .contentContainer {
   display: flex;
-  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  flex-direction: column;
+  width: 526px;
 }
 
-/* .nameContainer {
+.nameContainer {
   display: flex;
   justify-content: space-between;
-} */
+  align-items: center;
+  width: 100%;
+}
 
 .photoContainer {
   border-radius: 10px;
-  width: 290px;
-  height: 310px;
+  min-width: 290px;
+  margin: 0 auto;
 }
 
 .photo {
+  position: static;
+  /* display: block; */
   width: 100%;
 }
 
@@ -37,6 +45,18 @@
   height: 24px;
 }
 
+.ratingAndLocation {
+  display: flex;
+  gap: 16px;
+}
+
+.littleInfo {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
 .heartIcon {
   fill: #ffffff;
   stroke: #101828;
@@ -51,8 +71,55 @@
   stroke: #101828;
 }
 
+.descriptionText {
+  width: 525px;
+  height: 24px;
+  color: rgb(71, 84, 103);
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .usersIcon {
   fill: #101828;
+}
+
+.transIcon {
+  fill: #ffffff;
+  stroke: #101828;
+}
+
+.engineIcon {
+  fill: #101828;
+}
+
+.kitchenIcon {
+  fill: #ffffff;
+  stroke: #101828;
+}
+
+.bedIcon {
+  fill: #ffffff;
+  stroke: #101828;
+}
+
+.airConditionerIcon {
+  fill: #101828;
+}
+
+.infoCamperList {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.infoCamperItem {
+  display: flex;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  background: rgb(242, 244, 247);
 }
 
 .showMoreButton {
