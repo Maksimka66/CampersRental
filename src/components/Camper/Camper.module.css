@@ -4,6 +4,23 @@
   width: 840px;
 }
 
+.photoContainer {
+  width: 290px;
+  height: 310px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: center;
+}
+
 .contentContainer {
   display: flex;
   align-items: flex-start;
@@ -16,24 +33,42 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 248px;
   width: 100%;
 }
 
-.photoContainer {
-  border-radius: 10px;
-  min-width: 290px;
-  margin: 0 auto;
+.unitContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.photo {
-  position: static;
-  /* display: block; */
-  width: 100%;
+.name {
+  font-family: "Inter", sans-serif;
+  color: rgb(16, 24, 40);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  white-space: nowrap;
+  width: 120px;
+}
+
+.price {
+  color: rgb(16, 24, 40);
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0%;
+  text-align: left;
 }
 
 .priceAndButton {
   display: flex;
   gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .favoritesButton {
@@ -66,14 +101,30 @@
   border-radius: 0.5px;
 }
 
+.rating {
+  color: rgb(16, 24, 40);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-decoration-line: underline;
+}
+
+.location {
+  composes: rating;
+  text-decoration-line: none;
+}
+
 .locationIcon {
   fill: #ffffff;
   stroke: #101828;
 }
 
 .descriptionText {
-  width: 525px;
   height: 24px;
+  font-family: "Inter", sans-serif;
+  max-width: 100%;
   color: rgb(71, 84, 103);
   text-align: left;
   white-space: nowrap;
@@ -81,8 +132,65 @@
   text-overflow: ellipsis;
 }
 
+.infoCamperList {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.infoCamperItem {
+  display: flex;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  background: rgb(242, 244, 247);
+  justify-content: center;
+  align-items: center;
+}
+
 .usersIcon {
   fill: #101828;
+}
+
+.usersText {
+  width: 62px;
+  height: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgb(16, 24, 40);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.transText {
+  composes: usersText;
+  width: 79px;
+}
+
+.engineText {
+  composes: usersText;
+  width: 45px;
+}
+
+.kitchenText {
+  composes: usersText;
+  width: 59px;
+}
+
+.bedsText {
+  composes: usersText;
+  width: 50px;
+}
+
+.airConditionerText {
+  composes: usersText;
+  width: 23px;
 }
 
 .transIcon {
@@ -108,32 +216,16 @@
   fill: #101828;
 }
 
-.infoCamperList {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.infoCamperItem {
-  display: flex;
-  gap: 8px;
-  padding: 12px 18px;
-  border-radius: 100px;
-  background: rgb(242, 244, 247);
-}
-
 .showMoreButton {
-  width: 166px;
-  height: 56px;
   display: flex;
-  flex-direction: row;
+  border: none;
   justify-content: center;
   align-items: center;
-  padding: 16px 40px 16px 40px;
+  padding: 16px 40px;
   border-radius: 200px;
   background: rgb(228, 72, 72);
   color: rgb(255, 255, 255);
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
