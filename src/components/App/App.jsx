@@ -17,7 +17,6 @@ Modal.setAppElement("#root");
 function App() {
   return (
     <>
-      <CamperModalInfo />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />

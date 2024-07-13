@@ -47,9 +47,23 @@ const CamperModalInfo = () => {
           ))}
       </ul>
       <p className={css.descriptionInfo}>{description}</p>
-      <nav>
-        <NavLink to="features">Features</NavLink>
-        <NavLink to="reviews">Reviews</NavLink>
+      <nav className={css.camperInfoNavigation}>
+        <NavLink
+          to="features"
+          className={({ isActive }) =>
+            isActive ? css.moreInfoLinkActive : css.moreInfoLinkDisabled
+          }
+        >
+          Features
+        </NavLink>
+        <NavLink
+          to="reviews"
+          className={({ isActive }) =>
+            isActive ? css.moreInfoLinkActive : css.moreInfoLinkDisabled
+          }
+        >
+          Reviews
+        </NavLink>
       </nav>
       <Outlet />
     </div>
