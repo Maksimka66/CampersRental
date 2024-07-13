@@ -18,7 +18,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: calc(100% - 75%);
 }
 
 .contentContainer {
@@ -29,18 +29,18 @@
   width: 526px;
 }
 
-.nameContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 248px;
-  width: 100%;
-}
-
 .unitContainer {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.nameContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .name {
@@ -50,8 +50,9 @@
   font-weight: 600;
   line-height: 30px;
   text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
-  width: 120px;
 }
 
 .price {
@@ -60,14 +61,12 @@
   font-size: 24px;
   font-weight: 600;
   line-height: 30px;
-  letter-spacing: 0%;
   text-align: left;
 }
 
 .priceAndButton {
   display: flex;
   gap: 10px;
-  justify-content: flex-end;
   align-items: center;
 }
 
