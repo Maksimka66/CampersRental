@@ -57,7 +57,7 @@ const Camper = ({
               >{`${rating}(${reviews.length} Reviews)`}</p>
             </div>
             <div className={css.littleInfo}>
-              <svg className={css.locationIcon} width="12" height="15">
+              <svg className={css.locationIcon} width="16" height="16">
                 <use href="/src/images/sprite/sprite.svg#icon-map-pin"></use>
               </svg>
               <p className={css.location}>{location}</p>

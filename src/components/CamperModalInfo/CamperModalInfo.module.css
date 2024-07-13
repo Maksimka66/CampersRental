@@ -1,0 +1,112 @@
+.CamperDetailsInfoContainer {
+  padding: 40px;
+  width: 902px;
+}
+
+.nameAndLocationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.nameAndCloseIconContainer {
+  display: flex;
+}
+
+.nameParagraph {
+  font-family: "Inter", sans-serif;
+  color: rgb(16, 24, 40);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.starRatingAndLocationContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.starIconAndRatingContainer {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.starIcon {
+  border-radius: 0.5px;
+}
+
+.reviewsDescription {
+  color: rgb(16, 24, 40);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-decoration-line: underline;
+}
+
+.locationContainer {
+  composes: starIconAndRatingContainer;
+}
+
+.locationIcon {
+  fill: #ffffff;
+  stroke: #101828;
+}
+
+.locationDescription {
+  composes: reviewsDescription;
+  text-decoration-line: none;
+}
+
+.priceInfo {
+  color: rgb(16, 24, 40);
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.photoCampersList {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.photoListItem {
+  width: 290px;
+  height: 310px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photoItem {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* object-position: calc(100% - 70%); */
+}
+
+.descriptionInfo {
+  color: rgb(71, 84, 103);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 44px;
+}
