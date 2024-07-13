@@ -3,6 +3,8 @@ import { NavLink, Outlet } from "react-router-dom";
 
 import { selectOneCamper } from "../../redux/campers/selectors";
 
+import css from "./CamperModalInfo.module.css";
+
 const CamperModalInfo = () => {
   const { name, reviews, rating, location, price, gallery, description } =
     useSelector(selectOneCamper);
@@ -21,7 +23,7 @@ const CamperModalInfo = () => {
         {gallery &&
           gallery.map((photo, index) => (
             <li key={index}>
-              <img src={photo} alt="Camper photo" width="290" />
+              <img src={photo} alt="Camper photo" />
             </li>
           ))}
       </ul>
