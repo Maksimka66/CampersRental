@@ -1,4 +1,36 @@
+.featuresContainer {
+  display: flex;
+  gap: 24px;
+}
+
+.listsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
 .detailsCamperList {
   display: flex;
   gap: 8px;
+}
+
+.anotherDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.vehicleDetailsHeader {
+  color: rgb(16, 24, 40);
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+}
+
+.anotherDetailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
