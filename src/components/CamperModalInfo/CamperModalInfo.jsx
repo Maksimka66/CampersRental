@@ -1,22 +1,36 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Outlet } from "react-router-dom";
 
 import { selectOneCamper } from "../../redux/campers/selectors";
+import ModalWindow from "../ModalWindow/ModalWindow";
 
 import css from "./CamperModalInfo.module.css";
+import { switchModal } from "../../redux/campers/slice";
 
 const CamperModalInfo = () => {
   const { name, reviews, rating, location, price, gallery, description } =
     useSelector(selectOneCamper);
 
+  const dispatch = useDispatch();
+
+  const closeModal = () => {
+    dispatch(switchModal(false));
+  };
+
   return (
-    <div className={css.CamperDetailsInfoContainer}>
+    <ModalWindow>
       <div className={css.nameAndLocationContainer}>
         <div className={css.nameAndCloseIconContainer}>
           <h2 className={css.nameParagraph}>{name}</h2>
-          <svg width="32" height="32">
-            <use href="/src/images/sprite/sprite.svg#icon-Rating-1"></use>
-          </svg>
+          <button
+            className={css.closeButton}
+            type="button"
+            onClick={closeModal}
+          >
+            <svg className={css.closeIcon} width="32" height="32">
+              <use href="/src/images/sprite/sprite.svg#icon-Rating-1"></use>
+            </svg>
+          </button>
         </div>
         <div className={css.starRatingAndLocationContainer}>
           {reviews && (
@@ -66,7 +80,7 @@ const CamperModalInfo = () => {
         </NavLink>
       </nav>
       <Outlet />
-    </div>
+    </ModalWindow>
   );
 };
 

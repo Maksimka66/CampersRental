@@ -1,7 +1,7 @@
-.CamperDetailsInfoContainer {
+/* .CamperDetailsInfoContainer {
   padding: 40px;
   width: 902px;
-}
+} */
 
 .nameAndLocationContainer {
   display: flex;
@@ -12,6 +12,7 @@
 
 .nameAndCloseIconContainer {
   display: flex;
+  justify-content: space-between;
 }
 
 .nameParagraph {
@@ -24,6 +25,21 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.closeButton {
+  background-color: #ffffff;
+  padding: 0;
+  border-radius: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeIcon {
+  stroke: black;
 }
 
 .starRatingAndLocationContainer {
