@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import Modal from "react-modal";
 
 import Home from "../../pages/Home/Home";
 import Catalog from "../../pages/Catalog/Catalog";
@@ -8,11 +7,9 @@ import NotFound from "../../pages/NotFound/NotFound";
 import Features from "../Features/Features";
 import Reviews from "../Reviews/Reviews";
 import CamperModalInfo from "../CamperModalInfo/CamperModalInfo";
-
-import "./App.css";
 import ModalWindow from "../ModalWindow/ModalWindow";
 
-Modal.setAppElement("#root");
+import "./App.css";
 
 function App() {
   return (
