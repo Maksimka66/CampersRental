@@ -156,7 +156,6 @@ const Camper = ({ camper }) => {
         >
           Show more
         </button>
-        <Outlet />
       </div>
     </div>
   );
