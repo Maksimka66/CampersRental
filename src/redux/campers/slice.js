@@ -45,9 +45,23 @@ const campersSlice = createSlice({
       console.log(action.payload);
       state.modal = action.payload;
     },
+    addCamperToFavorites(state, action) {
+      console.log(action.payload);
+      state.favorites.push(action.payload);
+    },
+    removeCamperFromFavorites(state, action) {
+      console.log(action.payload);
+      state.favorites = state.favorites.filter(
+        (item) => item._id !== action.payload._id
+      );
+    },
   },
 });
 
-export const { switchModal } = campersSlice.actions;
+export const { switchModal, addCamperToFavorites, removeCamperFromFavorites } =
+  campersSlice.actions;
+
+console.dir(addCamperToFavorites);
+console.dir(removeCamperFromFavorites);
 
 export default campersSlice.reducer;

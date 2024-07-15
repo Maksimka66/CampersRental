@@ -1,46 +1,62 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { getOneCamper } from "../../redux/campers/operations";
-import { switchModal } from "../../redux/campers/slice";
+import {
+  addCamperToFavorites,
+  removeCamperFromFavorites,
+  switchModal,
+} from "../../redux/campers/slice";
 
 import css from "./Camper.module.css";
+import { selectFavorites } from "../../redux/campers/selectors";
 
-const Camper = ({
-  camper: {
-    gallery,
-    name,
-    price,
-    rating,
-    location,
-    reviews,
-    description,
-    adults,
-    transmission,
-    engine,
-    details,
-    _id,
-  },
-}) => {
+const Camper = ({ camper }) => {
   const dispatch = useDispatch();
 
+  const favorites = useSelector(selectFavorites);
+
+  console.log(favorites);
+
   const openModal = () => {
-    dispatch(getOneCamper(_id));
+    dispatch(getOneCamper(camper._id));
     dispatch(switchModal(true));
+  };
+
+  const includesObject = favorites.some(
+    (item) => JSON.stringify(item) === JSON.stringify(camper)
+  );
+
+  const switchFavorites = () => {
+    if (includesObject) {
+      dispatch(removeCamperFromFavorites(camper));
+    } else {
+      dispatch(addCamperToFavorites(camper));
+    }
   };
 
   return (
     <div className={css.listItemContainer}>
       <div className={css.photoContainer}>
-        <img src={gallery[0]} className={css.photo} alt="Camper photo" />
+        <img src={camper.gallery[0]} className={css.photo} alt="Camper photo" />
       </div>
       <div className={css.contentContainer}>
         <div className={css.unitContainer}>
           <div className={css.nameContainer}>
-            <h2 className={css.name}>{name}</h2>
+            <h2 className={css.name}>{camper.name}</h2>
             <div className={css.priceAndButton}>
-              <p className={css.price}>{`€${price},00`}</p>
-              <button className={css.favoritesButton} type="button">
-                <svg className={css.heartIcon} width="24" height="24">
+              <p className={css.price}>{`€${camper.price},00`}</p>
+              <button
+                className={css.favoritesButton}
+                type="button"
+                onClick={switchFavorites}
+              >
+                <svg
+                  className={`${
+                    includesObject ? css.heartIconIsActive : css.heartIcon
+                  }`}
+                  width="24"
+                  height="24"
+                >
                   <use href="/src/images/sprite/sprite.svg#icon-heart"></use>
                 </svg>
               </button>
@@ -54,32 +70,33 @@ const Camper = ({
               </svg>
               <p
                 className={css.rating}
-              >{`${rating}(${reviews.length} Reviews)`}</p>
+              >{`${camper.rating}(${camper.reviews.length} Reviews)`}</p>
             </div>
             <div className={css.littleInfo}>
               <svg className={css.locationIcon} width="16" height="16">
                 <use href="/src/images/sprite/sprite.svg#icon-map-pin"></use>
               </svg>
-              <p className={css.location}>{location}</p>
+              <p className={css.location}>{camper.location}</p>
             </div>
           </div>
         </div>
 
-        <p className={css.descriptionText}>{description}</p>
+        <p className={css.descriptionText}>{camper.description}</p>
 
         <ul className={css.infoCamperList}>
           <li className={css.infoCamperItem}>
             <svg className={css.usersIcon} width="20" height="20">
               <use href="/src/images/sprite/sprite.svg#icon-Users"></use>
             </svg>
-            <p className={css.usersText}>{adults} adults</p>
+            <p className={css.usersText}>{camper.adults} adults</p>
           </li>
           <li className={css.infoCamperItem}>
             <svg className={css.transIcon} width="20" height="20">
               <use href="/src/images/sprite/sprite.svg#icon-Container"></use>
             </svg>
             <p className={css.transText}>
-              {transmission[0].toUpperCase() + transmission.substring(1)}
+              {camper.transmission[0].toUpperCase() +
+                camper.transmission.substring(1)}
             </p>
           </li>
           <li className={css.infoCamperItem}>
@@ -87,11 +104,11 @@ const Camper = ({
               <use href="/src/images/sprite/sprite.svg#icon-Vector-3"></use>
             </svg>
             <p className={css.engineText}>
-              {engine[0].toUpperCase() + engine.substring(1)}
+              {camper.engine[0].toUpperCase() + camper.engine.substring(1)}
             </p>
           </li>
           <li className={css.infoCamperItem}>
-            {details.kitchen && (
+            {camper.details.kitchen && (
               <>
                 <svg className={css.kitchenIcon} width="20" height="20">
                   <use href="/src/images/sprite/sprite.svg#icon-Vector-5"></use>
@@ -101,24 +118,24 @@ const Camper = ({
             )}
           </li>
           <li className={css.infoCamperItem}>
-            {details.beds === 1 ? (
+            {camper.details.beds === 1 ? (
               <>
                 <svg className={css.bedIcon} width="20" height="20">
                   <use href="/src/images/sprite/sprite.svg#icon-Container-1"></use>
                 </svg>
-                <p className={css.bedsText}>{`${details.beds} bed`}</p>
+                <p className={css.bedsText}>{`${camper.details.beds} bed`}</p>
               </>
             ) : (
               <>
                 <svg className={css.bedIcon} width="20" height="20">
                   <use href="/src/images/sprite/sprite.svg#icon-Container-1"></use>
                 </svg>
-                <p className={css.bedsText}>{`${details.beds} beds`}</p>
+                <p className={css.bedsText}>{`${camper.details.beds} beds`}</p>
               </>
             )}
           </li>
           <li className={css.infoCamperItem}>
-            {details.airConditioner && (
+            {camper.details.airConditioner && (
               <>
                 <svg className={css.airConditionerIcon} width="20" height="20">
                   <use href="/src/images/sprite/sprite.svg#icon-Vector-10"></use>
