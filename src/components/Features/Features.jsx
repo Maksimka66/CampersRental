@@ -27,16 +27,16 @@ const Features = () => {
               {transmission[0].toUpperCase() + transmission.substring(1)}
             </p>
           </li>
-          {/* <li>
-          {details.airConditioner && (
-            <>
-              <svg className={css.airConditionerIcon} width="20" height="20">
-                <use href="/src/images/sprite/sprite.svg#icon-Vector-10"></use>
-              </svg>
-              <p className={css.airConditionerText}>AC</p>
-            </>
-          )}
-        </li> */}
+          <li>
+            {details.airConditioner && (
+              <>
+                <svg className={css.airConditionerIcon} width="20" height="20">
+                  <use href="/src/images/sprite/sprite.svg#icon-Vector-10"></use>
+                </svg>
+                <p className={css.airConditionerText}>AC</p>
+              </>
+            )}
+          </li>
           <li>
             <svg className={css.engineIcon} width="20" height="20">
               <use href="/src/images/sprite/sprite.svg#icon-Vector-3"></use>
@@ -70,14 +70,6 @@ const Features = () => {
               </>
             )}
           </li>
-          {details.airConditioner && (
-            <li>
-              <svg width="20" height="20">
-                <use href="/src/images/sprite/sprite.svg#con-streamline_hotel-air-conditioner"></use>
-              </svg>
-              <p>{details.airConditioner} air conditioner</p>
-            </li>
-          )}
           {details.CD && (
             <li>
               <svg width="20" height="20">

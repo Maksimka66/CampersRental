@@ -8,13 +8,12 @@ import Features from "../Features/Features";
 import Reviews from "../Reviews/Reviews";
 import CamperModalInfo from "../CamperModalInfo/CamperModalInfo";
 import Navigation from "../Navigation/Navigation";
-import ModalWindow from "../ModalWindow/ModalWindow";
 
 import "./App.css";
 
 function App() {
   return (
-    <>
+    <main>
       <Navigation />
 
       <Routes>
@@ -28,7 +27,7 @@ function App() {
         <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
+    </main>
   );
 }
 

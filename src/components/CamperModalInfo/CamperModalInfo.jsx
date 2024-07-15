@@ -3,9 +3,9 @@ import { NavLink, Outlet } from "react-router-dom";
 
 import { selectOneCamper } from "../../redux/campers/selectors";
 import ModalWindow from "../ModalWindow/ModalWindow";
+import { switchModal } from "../../redux/campers/slice";
 
 import css from "./CamperModalInfo.module.css";
-import { switchModal } from "../../redux/campers/slice";
 
 const CamperModalInfo = () => {
   const { name, reviews, rating, location, price, gallery, description } =

@@ -6,6 +6,7 @@ import { selectCampers } from "../../redux/campers/selectors";
 import Camper from "../../components/Camper/Camper";
 
 import css from "./Catalog.module.css";
+import { Outlet } from "react-router-dom";
 
 const Catalog = () => {
   const campers = useSelector(selectCampers);
@@ -27,6 +28,7 @@ const Catalog = () => {
           </li>
         ))}
       </ul>
+      <Outlet />
     </>
   );
 };
