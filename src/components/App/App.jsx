@@ -7,6 +7,7 @@ import NotFound from "../../pages/NotFound/NotFound";
 import Features from "../Features/Features";
 import Reviews from "../Reviews/Reviews";
 import CamperModalInfo from "../CamperModalInfo/CamperModalInfo";
+import Navigation from "../Navigation/Navigation";
 import ModalWindow from "../ModalWindow/ModalWindow";
 
 import "./App.css";
@@ -14,13 +15,15 @@ import "./App.css";
 function App() {
   return (
     <>
-      <CamperModalInfo />
+      <Navigation />
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/catalog/:camperId" element={<CamperModalInfo />}>
-          <Route path="features" element={<Features />} />
-          <Route path="reviews" element={<Reviews />} />
+        <Route path="/catalog" element={<Catalog />}>
+          <Route path=":camperId" element={<CamperModalInfo />}>
+            <Route path="features" element={<Features />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
         </Route>
         <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<NotFound />} />

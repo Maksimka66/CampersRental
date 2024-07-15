@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { Outlet, useNavigate } from "react-router-dom";
 
 import { getOneCamper } from "../../redux/campers/operations";
 import {
@@ -6,18 +7,21 @@ import {
   removeCamperFromFavorites,
   switchModal,
 } from "../../redux/campers/slice";
+import { selectFavorites } from "../../redux/campers/selectors";
 
 import css from "./Camper.module.css";
-import { selectFavorites } from "../../redux/campers/selectors";
 
 const Camper = ({ camper }) => {
   const dispatch = useDispatch();
 
   const favorites = useSelector(selectFavorites);
 
+  const navigate = useNavigate();
+
   console.log(favorites);
 
   const openModal = () => {
+    navigate(`/catalog/${camper._id}`);
     dispatch(getOneCamper(camper._id));
     dispatch(switchModal(true));
   };
@@ -152,6 +156,7 @@ const Camper = ({ camper }) => {
         >
           Show more
         </button>
+        <Outlet />
       </div>
     </div>
   );

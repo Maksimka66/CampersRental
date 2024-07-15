@@ -61,7 +61,4 @@ const campersSlice = createSlice({
 export const { switchModal, addCamperToFavorites, removeCamperFromFavorites } =
   campersSlice.actions;
 
-console.dir(addCamperToFavorites);
-console.dir(removeCamperFromFavorites);
-
 export default campersSlice.reducer;

@@ -1,0 +1,32 @@
+.navList {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 982px;
+  margin-bottom: 32px;
+}
+
+.navLinkDisabled {
+  color: rgb(16, 24, 40);
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.navLinkActive {
+  color: rgb(32, 194, 27);
+  border-bottom: 5px solid rgb(228, 72, 72);
+  padding-bottom: 12px;
+}
+
+.navLinkDisabled:hover {
+  color: rgb(18, 179, 219);
+}
+
+.navLinkActive:hover {
+  color: rgb(218, 38, 173);
+}
