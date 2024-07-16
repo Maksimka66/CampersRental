@@ -12,6 +12,87 @@
 .detailsCamperList {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
+  width: 430px;
+  height: 200px;
+}
+
+.moreInfoCamperItem {
+  display: flex;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  background: rgb(242, 244, 247);
+  justify-content: center;
+  align-items: center;
+}
+
+.usersText {
+  width: 62px;
+  height: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgb(16, 24, 40);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.transText {
+  composes: usersText;
+  width: 79px;
+}
+
+.engineText {
+  composes: usersText;
+  width: 45px;
+}
+
+.kitchenText {
+  composes: usersText;
+  width: 59px;
+}
+
+.bedsText {
+  composes: usersText;
+  width: 50px;
+}
+
+.airConditionerText {
+  composes: usersText;
+  width: 23px;
+}
+
+.usersIcon {
+  fill: #101828;
+}
+
+.transIcon {
+  fill: #ffffff;
+  stroke: #101828;
+}
+
+.engineIcon {
+  fill: #101828;
+}
+
+.kitchenIcon {
+  fill: #ffffff;
+  stroke: #101828;
+}
+
+.bedIcon {
+  fill: #ffffff;
+  stroke: #101828;
+}
+
+.airConditionerIcon {
+  fill: #101828;
 }
 
 .anotherDetailsContainer {

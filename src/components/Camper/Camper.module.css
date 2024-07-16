@@ -156,10 +156,6 @@
   align-items: center;
 }
 
-.usersIcon {
-  fill: #101828;
-}
-
 .usersText {
   width: 62px;
   height: 20px;
@@ -199,6 +195,10 @@
 .airConditionerText {
   composes: usersText;
   width: 23px;
+}
+
+.usersIcon {
+  fill: #101828;
 }
 
 .transIcon {

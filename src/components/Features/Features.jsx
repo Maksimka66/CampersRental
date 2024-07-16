@@ -13,13 +13,13 @@ const Features = () => {
     <div className={css.featuresContainer}>
       <div className={css.listsContainer}>
         <ul className={css.detailsCamperList}>
-          <li>
+          <li className={css.moreInfoCamperItem}>
             <svg className={css.usersIcon} width="20" height="20">
               <use href="/src/images/sprite/sprite.svg#icon-Users"></use>
             </svg>
             <p className={css.usersText}>{adults} adults</p>
           </li>
-          <li>
+          <li className={css.moreInfoCamperItem}>
             <svg className={css.transIcon} width="20" height="20">
               <use href="/src/images/sprite/sprite.svg#icon-Container"></use>
             </svg>
@@ -27,7 +27,7 @@ const Features = () => {
               {transmission[0].toUpperCase() + transmission.substring(1)}
             </p>
           </li>
-          <li>
+          <li className={css.moreInfoCamperItem}>
             {details.airConditioner && (
               <>
                 <svg className={css.airConditionerIcon} width="20" height="20">
@@ -37,7 +37,7 @@ const Features = () => {
               </>
             )}
           </li>
-          <li>
+          <li className={css.moreInfoCamperItem}>
             <svg className={css.engineIcon} width="20" height="20">
               <use href="/src/images/sprite/sprite.svg#icon-Vector-3"></use>
             </svg>
@@ -46,14 +46,14 @@ const Features = () => {
             </p>
           </li>
           {details.kitchen && (
-            <li>
+            <li className={css.moreInfoCamperItem}>
               <svg className={css.kitchenIcon} width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Vector-5"></use>
               </svg>
               <p className={css.kitchenText}>kitchen</p>
             </li>
           )}
-          <li>
+          <li className={css.moreInfoCamperItem}>
             {details.beds === 1 ? (
               <>
                 <svg className={css.bedIcon} width="20" height="20">
@@ -71,7 +71,7 @@ const Features = () => {
             )}
           </li>
           {details.CD && (
-            <li>
+            <li className={css.moreInfoCamperItem}>
               <svg width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Group"></use>
               </svg>
@@ -79,7 +79,7 @@ const Features = () => {
             </li>
           )}
           {details.radio && (
-            <li>
+            <li className={css.moreInfoCamperItem}>
               <svg width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Group-1"></use>
               </svg>
@@ -87,7 +87,7 @@ const Features = () => {
             </li>
           )}
           {details.hob && (
-            <li>
+            <li className={css.moreInfoCamperItem}>
               <svg width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Group-2"></use>
               </svg>
@@ -95,7 +95,7 @@ const Features = () => {
             </li>
           )}
           {details.TV && (
-            <li>
+            <li className={css.moreInfoCamperItem}>
               <svg width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Vertical-container"></use>
               </svg>
@@ -103,7 +103,7 @@ const Features = () => {
             </li>
           )}
           {details.microwave && (
-            <li>
+            <li className={css.moreInfoCamperItem}>
               <svg width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Group-3"></use>
               </svg>
@@ -111,21 +111,21 @@ const Features = () => {
             </li>
           )}
           {details.freezer && (
-            <li>
+            <li className={css.moreInfoCamperItem}>
               <svg width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-arcticons_freezer"></use>
               </svg>
             </li>
           )}
           {details.shower && (
-            <li>
+            <li className={css.moreInfoCamperItem}>
               <svg width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Vector-4"></use>
               </svg>
             </li>
           )}
           {details.toilet && (
-            <li>
+            <li className={css.moreInfoCamperItem}>
               <svg width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Vector-7"></use>
               </svg>
