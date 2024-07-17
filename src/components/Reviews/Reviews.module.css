@@ -17,6 +17,32 @@
   gap: 16px;
 }
 
+.nameAndRatingContainer {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.firstLetter {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: #f2f4f7;
+  color: #e44848;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.littleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .reviewerName {
   color: rgb(16, 24, 40);
   font-family: "Inter", sans-serif;
@@ -25,6 +51,15 @@
   line-height: 24px;
   letter-spacing: 0;
   text-align: left;
+}
+
+.ratingStarsList {
+  display: flex;
+  gap: 4px;
+}
+
+.absentStar {
+  fill: #f2f4f7;
 }
 
 .reviewText {
