@@ -6,8 +6,46 @@ import FormToOrder from "../FormToOrder/FormToOrder";
 import css from "./Features.module.css";
 
 const Features = () => {
-  const { adults, transmission, details, engine } =
-    useSelector(selectOneCamper);
+  const {
+    adults,
+    transmission,
+    details,
+    engine,
+    form,
+    length,
+    width,
+    height,
+    tank,
+    consumption,
+  } = useSelector(selectOneCamper);
+
+  const contentString = (str) => {
+    return str.split("").map((item) => {
+      if (item === "m" || item === "l") {
+        return;
+      }
+
+      return item;
+    });
+  };
+
+  const formString = (str) => {
+    const checkString = str
+      .split("")
+      .findIndex((item) => item === item.toUpperCase() && item !== str[0]);
+
+    console.log(checkString);
+
+    if (checkString === -1) {
+      return `${str[0].toUpperCase()}${str.substring(1)}`;
+    } else {
+      return `${str[0].toUpperCase()}${str.substring(1, checkString)} ${str[
+        checkString
+      ].toLowerCase()}${str.substring(checkString + 1)}`;
+    }
+  };
+
+  console.log(formString(form));
 
   return (
     <div className={css.featuresContainer}>
@@ -45,7 +83,7 @@ const Features = () => {
               {engine[0].toUpperCase() + engine.substring(1)}
             </p>
           </li>
-          {details.kitchen && (
+          {details.kitchen !== 0 && (
             <li className={css.moreInfoCamperItem}>
               <svg className={css.kitchenIcon} width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Vector-5"></use>
@@ -70,106 +108,98 @@ const Features = () => {
               </>
             )}
           </li>
-          {details.CD && (
+          {details.CD !== 0 && (
             <li className={css.moreInfoCamperItem}>
-              <svg width="20" height="20">
+              <svg className={css.cdIcon} width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Group"></use>
               </svg>
-              <p>CD</p>
+              <p className={css.cdText}>CD</p>
             </li>
           )}
-          {details.radio && (
+          {details.radio !== 0 && (
             <li className={css.moreInfoCamperItem}>
-              <svg width="20" height="20">
+              <svg className={css.radioIcon} width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Group-1"></use>
               </svg>
-              <p>Radio</p>
+              <p className={css.radioText}>Radio</p>
             </li>
           )}
-          {details.hob && (
+          {details.hob !== 0 && (
             <li className={css.moreInfoCamperItem}>
-              <svg width="20" height="20">
+              <svg className={css.hobIcon} width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Group-2"></use>
               </svg>
-              <p>{details.hob} hob</p>
+              <p className={css.hobText}>{details.hob} hob</p>
             </li>
           )}
-          {details.TV && (
+          {details.TV !== 0 && (
             <li className={css.moreInfoCamperItem}>
-              <svg width="20" height="20">
+              <svg className={css.tvIcon} width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Vertical-container"></use>
               </svg>
-              <p>TV</p>
+              <p className={css.tvText}>TV</p>
             </li>
           )}
-          {details.microwave && (
+          {details.microwave !== 0 && (
             <li className={css.moreInfoCamperItem}>
-              <svg width="20" height="20">
+              <svg className={css.microwaveIcon} width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Group-3"></use>
               </svg>
-              <p></p>
+              <p className={css.microwaveText}>Microwave</p>
             </li>
           )}
-          {details.freezer && (
+          {details.freezer !== 0 && (
             <li className={css.moreInfoCamperItem}>
-              <svg width="20" height="20">
+              <svg className={css.freezerIcon} width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-arcticons_freezer"></use>
               </svg>
+              <p className={css.freezerText}>Freezer</p>
             </li>
           )}
-          {details.shower && (
+          {details.shower !== 0 && (
             <li className={css.moreInfoCamperItem}>
-              <svg width="20" height="20">
+              <svg className={css.showerIcon} width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Vector-4"></use>
               </svg>
+              <p className={css.showerText}>Shower</p>
             </li>
           )}
-          {details.toilet && (
+          {details.toilet !== 0 && (
             <li className={css.moreInfoCamperItem}>
-              <svg width="20" height="20">
+              <svg className={css.toiletIcon} width="20" height="20">
                 <use href="/src/images/sprite/sprite.svg#icon-Vector-7"></use>
               </svg>
+              <p className={css.toiletText}>Toilet</p>
             </li>
           )}
         </ul>
         <div className={css.anotherDetailsContainer}>
           <h3 className={css.vehicleDetailsHeader}>Vehicle details</h3>
+          <div className={css.decorativeLine}></div>
           <ul className={css.anotherDetailsList}>
-            <li>
-              <div>
-                <p>Form</p>
-                <p></p>
-              </div>
+            <li className={css.anotherDetail}>
+              <p className={css.detail}>Form</p>
+              <p className={css.detail}>{formString(form)}</p>
             </li>
-            <li>
-              <div>
-                <p>Length</p>
-                <p></p>
-              </div>
+            <li className={css.anotherDetail}>
+              <p className={css.detail}>Length</p>
+              <p className={css.detail}>{contentString(length)} m</p>
             </li>
-            <li>
-              <div>
-                <p>Width</p>
-                <p></p>
-              </div>
+            <li className={css.anotherDetail}>
+              <p className={css.detail}>Width</p>
+              <p className={css.detail}>{contentString(width)} m</p>
             </li>
-            <li>
-              <div>
-                <p>Height</p>
-                <p></p>
-              </div>
+            <li className={css.anotherDetail}>
+              <p className={css.detail}>Height</p>
+              <p className={css.detail}>{contentString(height)} m</p>
             </li>
-            <li>
-              <div>
-                <p>Tank</p>
-                <p></p>
-              </div>
+            <li className={css.anotherDetail}>
+              <p className={css.detail}>Tank</p>
+              <p className={css.detail}>{contentString(tank)} l</p>
             </li>
-            <li>
-              <div>
-                <p>Consumption</p>
-                <p></p>
-              </div>
+            <li className={css.anotherDetail}>
+              <p className={css.detail}>Consumption</p>
+              <p className={css.detail}>{consumption}</p>
             </li>
           </ul>
         </div>

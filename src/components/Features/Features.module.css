@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   gap: 44px;
+  max-height: 530px;
 }
 
 .detailsCamperList {
@@ -14,7 +15,6 @@
   gap: 8px;
   flex-wrap: wrap;
   width: 430px;
-  height: 200px;
 }
 
 .moreInfoCamperItem {
@@ -68,6 +68,45 @@
   width: 23px;
 }
 
+.cdText {
+  composes: usersText;
+  width: 24px;
+}
+
+.radioText {
+  composes: usersText;
+  width: 44px;
+}
+
+.hobText {
+  composes: usersText;
+  width: 44px;
+}
+
+.tvText {
+  composes: usersText;
+  width: 24px;
+}
+
+.microwaveText {
+  composes: usersText;
+  width: 85px;
+}
+
+.freezerText {
+  composes: usersText;
+}
+
+.toiletText {
+  composes: usersText;
+  width: 42px;
+}
+
+.showerText {
+  composes: usersText;
+  width: 58px;
+}
+
 .usersIcon {
   fill: #101828;
 }
@@ -82,23 +121,53 @@
 }
 
 .kitchenIcon {
-  fill: #ffffff;
-  stroke: #101828;
+  composes: transIcon;
 }
 
 .bedIcon {
-  fill: #ffffff;
-  stroke: #101828;
+  composes: transIcon;
 }
 
 .airConditionerIcon {
   fill: #101828;
 }
 
+.cdIcon {
+  composes: transIcon;
+}
+
+.radioIcon {
+  composes: transIcon;
+}
+
+.hobIcon {
+  composes: transIcon;
+}
+
+.tvIcon {
+  composes: transIcon;
+}
+
+.microwaveIcon {
+  composes: transIcon;
+}
+
+.freezerIcon {
+  composes: transIcon;
+}
+
+.showerIcon {
+  composes: transIcon;
+}
+
+.toiletIcon {
+  fill: #101828;
+}
+
 .anotherDetailsContainer {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 24px;
 }
 
 .vehicleDetailsHeader {
@@ -110,8 +179,28 @@
   text-align: left;
 }
 
+.decorativeLine {
+  width: 430px;
+  height: 1px;
+  background-color: rgba(16, 24, 40, 0.1);
+}
+
 .anotherDetailsList {
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+.anotherDetail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail {
+  color: rgb(16, 24, 40);
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
 }
