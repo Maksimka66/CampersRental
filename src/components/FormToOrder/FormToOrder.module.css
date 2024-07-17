@@ -1,0 +1,116 @@
+.form {
+  padding: 24px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.infoForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formHeader {
+  color: rgb(16, 24, 40);
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+}
+
+.formText {
+  color: rgb(71, 84, 103);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.formElements {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 18px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.textAreaContainer {
+  position: relative;
+}
+
+.formFieldCalendar {
+  composes: formField;
+  cursor: pointer;
+}
+
+.calendarButton {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.calendarIcon {
+  fill: #ffffff;
+  stroke: #101828;
+}
+
+.formTextArea {
+  resize: none;
+  width: 400px;
+  padding: 18px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  height: 100%;
+}
+
+::placeholder {
+  color: rgba(16, 24, 40, 0.6);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+
+:focus::placeholder {
+  color: rgb(16, 24, 40);
+}
+
+.submitBtn {
+  color: rgb(255, 255, 255);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  border-radius: 200px;
+  background: rgb(228, 72, 72);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 60px;
+}

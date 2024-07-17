@@ -1,0 +1,38 @@
+.reviewsContainer {
+  display: flex;
+  gap: 24px;
+}
+
+.reviewList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.reviewListItem {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reviewerName {
+  color: rgb(16, 24, 40);
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.reviewText {
+  color: rgb(71, 84, 103);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  letter-spacing: 0;
+}

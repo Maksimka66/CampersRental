@@ -1,26 +1,29 @@
 import { useSelector } from "react-redux";
+
 import { selectOneCamper } from "../../redux/campers/selectors";
+import FormToOrder from "../FormToOrder/FormToOrder";
+
+import css from "./Reviews.module.css";
 
 const Reviews = () => {
   const { reviews } = useSelector(selectOneCamper);
 
   return (
-    <div>
-      <ul>
+    <div className={css.reviewsContainer}>
+      <ul className={css.reviewList}>
         {reviews &&
           reviews.map((review, index) => (
-            <li key={index}>
-              <div>
-                <div>
-                  <b>{review.reviewer_name[0]}</b>
-                </div>
-                <h3>{review.reviewer_name}</h3>
+            <li className={css.reviewListItem} key={index}>
+              <div className={css.nameAndRatingContainer}>
+                <b>{review.reviewer_name[0]}</b>
+                <h3 className={css.reviewerName}>{review.reviewer_name}</h3>
                 <div>{review.reviewer_rating}</div>
-                <p>{review.comment}</p>
               </div>
+              <p className={css.reviewText}>{review.comment}</p>
             </li>
           ))}
       </ul>
+      <FormToOrder />
     </div>
   );
 };
