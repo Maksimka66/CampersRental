@@ -6,7 +6,7 @@ axios.defaults.baseURL = "https://668824620bc7155dc01a96fc.mockapi.io";
 let page = 1;
 let limit = 4;
 
-export const getAllCampers = createAsyncThunk(
+export const getFirstCampers = createAsyncThunk(
   "campers/showAll",
   async (_, thunkAPI) => {
     try {
@@ -22,14 +22,12 @@ export const getAllCampers = createAsyncThunk(
 export const getRestCampers = createAsyncThunk(
   "campers/showRest",
   async (_, thunkAPI) => {
-    const params = new URLSearchParams({ page, limit });
+    const params = new URLSearchParams({ page: (page += 1), limit });
 
     try {
-      if (Math.ceil(page < 13 / limit)) {
-        const response = await axios.get("/advert", { params });
+      const response = await axios.get("/advert", { params });
 
-        return response.data;
-      }
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -41,7 +39,6 @@ export const getOneCamper = createAsyncThunk(
   async (camperId, thunkAPI) => {
     try {
       const response = await axios.get(`/advert/${camperId}`);
-      console.log(response.data);
 
       return response.data;
     } catch (error) {
