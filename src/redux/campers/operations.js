@@ -9,15 +9,27 @@ let limit = 4;
 export const getAllCampers = createAsyncThunk(
   "campers/showAll",
   async (_, thunkAPI) => {
-    console.log(page);
+    try {
+      const response = await axios.get("/advert?page=1&limit=4");
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getRestCampers = createAsyncThunk(
+  "campers/showRest",
+  async (_, thunkAPI) => {
     const params = new URLSearchParams({ page, limit });
 
     try {
-      const response = await axios.get("/advert", { params });
+      if (Math.ceil(page < 13 / limit)) {
+        const response = await axios.get("/advert", { params });
 
-      page += 1;
-
-      return response.data;
+        return response.data;
+      }
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
