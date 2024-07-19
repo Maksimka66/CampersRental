@@ -3,11 +3,16 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://668824620bc7155dc01a96fc.mockapi.io";
 
+let page = 1;
+let limit = 4;
+
 export const getAllCampers = createAsyncThunk(
   "campers/showAll",
   async (_, thunkAPI) => {
+    const params = new URLSearchParams({ page, limit });
+
     try {
-      const response = await axios.get("/advert");
+      const response = await axios.get("/advert", { params });
 
       return response.data;
     } catch (error) {
