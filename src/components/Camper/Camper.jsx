@@ -18,8 +18,6 @@ const Camper = ({ camper }) => {
 
   const navigate = useNavigate();
 
-  console.log(favorites);
-
   const openModal = () => {
     navigate(`/catalog/${camper._id}`);
     dispatch(getOneCamper(camper._id));

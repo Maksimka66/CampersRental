@@ -29,6 +29,9 @@ const Catalog = () => {
         ))}
       </ul>
       <Outlet />
+      <button className={css.showMoreBtn} type="button">
+        Load more
+      </button>
     </>
   );
 };
