@@ -9,10 +9,13 @@ let limit = 4;
 export const getAllCampers = createAsyncThunk(
   "campers/showAll",
   async (_, thunkAPI) => {
+    console.log(page);
     const params = new URLSearchParams({ page, limit });
 
     try {
       const response = await axios.get("/advert", { params });
+
+      page += 1;
 
       return response.data;
     } catch (error) {

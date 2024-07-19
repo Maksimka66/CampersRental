@@ -19,6 +19,10 @@ const Catalog = () => {
 
   console.log(campers);
 
+  const getMoreCampers = () => {
+    dispatch(getAllCampers());
+  };
+
   return (
     <>
       <ul className={css.catalogList}>
@@ -29,7 +33,11 @@ const Catalog = () => {
         ))}
       </ul>
       <Outlet />
-      <button className={css.showMoreBtn} type="button">
+      <button
+        className={css.showMoreBtn}
+        type="button"
+        onClick={getMoreCampers}
+      >
         Load more
       </button>
     </>
