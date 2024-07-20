@@ -1,17 +1,8 @@
-import { useId } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { formToOrderSchema } from "../../Schemas/schema";
+import sprite from "../../images/sprite/sprite.svg";
 
 import css from "./FormToOrder.module.css";
 
 const FormToOrder = () => {
-  const initialValues = {
-    name: "",
-    email: "",
-    bookingDate: new Date().toISOString().slice(0, 10),
-    comment: "",
-  };
-
   const submitData = (e) => {
     e.target.reset();
   };
@@ -56,7 +47,7 @@ const FormToOrder = () => {
           />
           <button className={css.calendarButton} type="button">
             <svg className={css.calendarIcon} width="20" height="20">
-              <use href="/src/images/sprite/sprite.svg#icon-Button"></use>
+              <use href={`${sprite}#icon-Button`}></use>
             </svg>
           </button>
         </div>

@@ -77,7 +77,7 @@ const Camper = ({ camper }) => {
             </div>
             <div className={css.littleInfo}>
               <svg className={css.locationIcon} width="16" height="16">
-                <use href="/src/images/sprite/sprite.svg#icon-map-pin"></use>
+                <use href={`${sprite}#icon-map-pin`}></use>
               </svg>
               <p className={css.location}>{camper.location}</p>
             </div>
@@ -89,13 +89,13 @@ const Camper = ({ camper }) => {
         <ul className={css.infoCamperList}>
           <li className={css.infoCamperItem}>
             <svg className={css.usersIcon} width="20" height="20">
-              <use href="/src/images/sprite/sprite.svg#icon-Users"></use>
+              <use href={`${sprite}#icon-Users`}></use>
             </svg>
             <p className={css.usersText}>{camper.adults} adults</p>
           </li>
           <li className={css.infoCamperItem}>
             <svg className={css.transIcon} width="20" height="20">
-              <use href="/src/images/sprite/sprite.svg#icon-Container"></use>
+              <use href={`${sprite}#icon-Container`}></use>
             </svg>
             <p className={css.transText}>
               {camper.transmission[0].toUpperCase() +
@@ -104,7 +104,7 @@ const Camper = ({ camper }) => {
           </li>
           <li className={css.infoCamperItem}>
             <svg className={css.engineIcon} width="20" height="20">
-              <use href="/src/images/sprite/sprite.svg#icon-Vector-3"></use>
+              <use href={`${sprite}#icon-Vector-3`}></use>
             </svg>
             <p className={css.engineText}>
               {camper.engine[0].toUpperCase() + camper.engine.substring(1)}
@@ -114,7 +114,7 @@ const Camper = ({ camper }) => {
             {camper.details.kitchen && (
               <>
                 <svg className={css.kitchenIcon} width="20" height="20">
-                  <use href="/src/images/sprite/sprite.svg#icon-Vector-5"></use>
+                  <use href={`${sprite}#icon-Vector-5`}></use>
                 </svg>
                 <p className={css.kitchenText}>Kitchen</p>
               </>
@@ -124,14 +124,14 @@ const Camper = ({ camper }) => {
             {camper.details.beds === 1 ? (
               <>
                 <svg className={css.bedIcon} width="20" height="20">
-                  <use href="/src/images/sprite/sprite.svg#icon-Container-1"></use>
+                  <use href={`${sprite}#icon-Container-1`}></use>
                 </svg>
                 <p className={css.bedsText}>{`${camper.details.beds} bed`}</p>
               </>
             ) : (
               <>
                 <svg className={css.bedIcon} width="20" height="20">
-                  <use href="/src/images/sprite/sprite.svg#icon-Container-1"></use>
+                  <use href={`${sprite}#icon-Container-1`}></use>
                 </svg>
                 <p className={css.bedsText}>{`${camper.details.beds} beds`}</p>
               </>
@@ -141,7 +141,7 @@ const Camper = ({ camper }) => {
             {camper.details.airConditioner && (
               <>
                 <svg className={css.airConditionerIcon} width="20" height="20">
-                  <use href="/src/images/sprite/sprite.svg#icon-Vector-10"></use>
+                  <use href={`${sprite}#icon-Vector-10`}></use>
                 </svg>
                 <p className={css.airConditionerText}>AC</p>
               </>

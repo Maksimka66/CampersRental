@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 
 import { selectOneCamper } from "../../redux/campers/selectors";
 import FormToOrder from "../FormToOrder/FormToOrder";
+import sprite from "../../images/sprite/sprite.svg";
 
 import css from "./Reviews.module.css";
 
@@ -32,7 +33,7 @@ const Reviews = () => {
                     {starsRatingMarkup(review.reviewer_rating).map((i) => (
                       <li key={i}>
                         <svg width="16" height="16">
-                          <use href="/src/images/sprite/sprite.svg#icon-Rating"></use>
+                          <use href={`${sprite}#icon-Rating`}></use>
                         </svg>
                       </li>
                     ))}
