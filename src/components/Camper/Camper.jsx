@@ -8,6 +8,7 @@ import {
   switchModal,
 } from "../../redux/campers/slice";
 import { selectFavorites } from "../../redux/campers/selectors";
+import sprite from "../../images/sprite/sprite.svg";
 
 import css from "./Camper.module.css";
 
@@ -59,7 +60,7 @@ const Camper = ({ camper }) => {
                   width="24"
                   height="24"
                 >
-                  <use href="/src/images/sprite/sprite.svg#icon-heart"></use>
+                  <use href={`${sprite}#icon-heart`}></use>
                 </svg>
               </button>
             </div>
@@ -68,7 +69,7 @@ const Camper = ({ camper }) => {
           <div className={css.ratingAndLocation}>
             <div className={css.littleInfo}>
               <svg className={css.starIcon} width="16" height="16">
-                <use href="/src/images/sprite/sprite.svg#icon-Rating"></use>
+                <use href={`${sprite}#icon-Rating`}></use>
               </svg>
               <p
                 className={css.rating}
