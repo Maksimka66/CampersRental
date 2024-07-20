@@ -5,25 +5,28 @@ import {
   getFirstCampers,
   getRestCampers,
 } from "../../redux/campers/operations";
-import { selectCampers } from "../../redux/campers/selectors";
+import {
+  selectCampers,
+  selectLoadingCampers,
+} from "../../redux/campers/selectors";
 import Camper from "../../components/Camper/Camper";
 
 import css from "./Catalog.module.css";
 import { Outlet } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
 
 const Catalog = () => {
   const [limit] = useState(4);
   const [page, setPage] = useState(1);
 
   const campers = useSelector(selectCampers);
+  const loader = useSelector(selectLoadingCampers);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getFirstCampers());
   }, [dispatch]);
-
-  console.log(campers);
 
   const totalPages = Math.ceil(13 / limit);
 
@@ -33,7 +36,9 @@ const Catalog = () => {
     dispatch(getRestCampers());
   };
 
-  return (
+  return loader ? (
+    <Loader />
+  ) : (
     <>
       <ul className={css.catalogList}>
         {campers.map((camper) => (

@@ -34,8 +34,6 @@ const Features = () => {
       .split("")
       .findIndex((item) => item === item.toUpperCase() && item !== str[0]);
 
-    console.log(checkString);
-
     if (checkString === -1) {
       return `${str[0].toUpperCase()}${str.substring(1)}`;
     } else {
@@ -44,8 +42,6 @@ const Features = () => {
       ].toLowerCase()}${str.substring(checkString + 1)}`;
     }
   };
-
-  console.log(formString(form));
 
   return (
     <div className={css.featuresContainer}>

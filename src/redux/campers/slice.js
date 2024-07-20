@@ -49,15 +49,12 @@ const campersSlice = createSlice({
 
   reducers: {
     switchModal(state, action) {
-      console.log(action.payload);
       state.modal = action.payload;
     },
     addCamperToFavorites(state, action) {
-      console.log(action.payload);
       state.favorites.push(action.payload);
     },
     removeCamperFromFavorites(state, action) {
-      console.log(action.payload);
       state.favorites = state.favorites.filter(
         (item) => item._id !== action.payload._id
       );

@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 
+import css from "./NotFound.module.css";
+
 const NotFound = () => {
   return (
-    <div>
+    <div className={css.notFound}>
       <b>Oops! No pages with such request!</b>
-      <Link to="/">Back to home page</Link>;
+      <Link to="/">Back to home page</Link>
     </div>
   );
 };
