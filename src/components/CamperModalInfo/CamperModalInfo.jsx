@@ -4,6 +4,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { selectOneCamper } from "../../redux/campers/selectors";
 import ModalWindow from "../ModalWindow/ModalWindow";
 import { switchModal } from "../../redux/campers/slice";
+import sprite from "../../images/sprite/sprite.svg";
 
 import css from "./CamperModalInfo.module.css";
 
@@ -28,7 +29,7 @@ const CamperModalInfo = () => {
             onClick={closeModal}
           >
             <svg className={css.closeIcon} width="32" height="32">
-              <use href="/src/images/sprite/sprite.svg#icon-Rating-1"></use>
+              <use href={`${sprite}#icon-Rating-1`}></use>
             </svg>
           </button>
         </div>
@@ -36,7 +37,7 @@ const CamperModalInfo = () => {
           {reviews && (
             <div className={css.starIconAndRatingContainer}>
               <svg className={css.starIcon} width="16" height="16">
-                <use href="/src/images/sprite/sprite.svg#icon-Rating"></use>
+                <use href={`${sprite}#icon-Rating`}></use>
               </svg>
               <p
                 className={css.reviewsDescription}
@@ -45,7 +46,7 @@ const CamperModalInfo = () => {
           )}
           <div className={css.locationContainer}>
             <svg className={css.locationIcon} width="16" height="16">
-              <use href="/src/images/sprite/sprite.svg#icon-map-pin"></use>
+              <use href={`${sprite}#icon-map-pin`}></use>
             </svg>
             <p className={css.locationDescription}>{location}</p>
           </div>
