@@ -1,10 +1,8 @@
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { switchModal } from "../../redux/campers/slice";
 import { selectModal } from "../../redux/campers/selectors";
-
 import css from "./ModalWindow.module.css";
-import { useCallback, useEffect } from "react";
 
 const ModalWindow = ({ children }) => {
   const dispatch = useDispatch();
